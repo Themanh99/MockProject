@@ -1,18 +1,55 @@
 import React from 'react';
 // import PropTypes from 'prop-types';
+import './index.css';
 
 GridColumn.propTypes = {
 
 };
 
-function GridColumn({ numberColumns }) {
-    const genarateColumn = (numberColumns) => {
-        // return .repeat(numberColumns);
-    }
+function GridColumn() {
+    const ArrTitle = [
+        "firstName",
+        "lastName",
+        "age",
+        "email",
+        "phonenumber",
+        "address",
+        "city",
+        "state",
+        "zipcode",
+        "jobtitle",
+        "company",
+        "website",
+        "username",
+        "password",
+        "creditCardNumber",
+        "creditCardIssuer",
+        "expirationDate",
+        "cvv",
+        "bitcoinAddress",
+        "routingNumber",
+        "favoriteColor",
+        "favoriteFood",
+        "favoriteMovie",
+        "favoriteBook",
+        "favoriteSong",
+        "favoriteSport",
+        "favoriteAnimal",
+        "favoriteQuote",
+        "aboutMe",
+        "hobbies"
+    ];
+
     return (
-        <>
-            {genarateColumn}
-        </>
+        <div className="grid-column">
+            {ArrTitle.map((item, index) => {
+                return (
+                    <div key={index} className="grid-column-title">
+                        <p>{item}</p>
+                    </div>
+                )
+            })}
+        </div>
     );
 }
 
