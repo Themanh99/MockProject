@@ -1,6 +1,7 @@
+/* eslint-disable no-unused-vars */
 import React from 'react';
-// import PropTypes from 'prop-types';
-import './index.css';
+import PropTypes from 'prop-types';
+import './GridColumns.css';
 
 GridColumn.propTypes = {
 
