@@ -1,6 +1,6 @@
 import * as httpRequest from '../routes/utils/httpRequest';
 
-export const getAllUsers = async (_page, perPage = 30) => {
+export const getAllUsers = async (_page, perPage = 100) => {
     try {
         const response = await httpRequest.get('/users', {
             params: {

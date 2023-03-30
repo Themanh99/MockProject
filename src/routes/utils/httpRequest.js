@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const httpRequest = axios.create({
-    baseURL: 'http://mockup-api.onrender.com/api',
+    baseURL: 'https://mockup-api.onrender.com/api',
     headers: {
         'Content-Type': 'application/json',
         'Accept': 'application/json'
