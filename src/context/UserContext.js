@@ -8,21 +8,19 @@ function UserProvider({children}) {
     const [page, setPage] = useState(1);
     const [loading, setLoading] = useState(true);
 
-
     const getUsers = async () => {
         const result = await userServices.getAllUsers(page, 100);
         setData((prev) => [...prev, ...result]);
         setLoading(false);
     };
-
     const handleScroll = () => {
-        if (window.innerHeight + document.documentElement.scrollTop + 1
+        if (window.innerHeight + document.documentElement.scrollTop -17
             >= document.documentElement.scrollHeight) {
             setLoading(true);
             setPage(prev => prev + 1);
         }
     };
-
+    
     useEffect(() => {
         getUsers();
         // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -31,7 +29,7 @@ function UserProvider({children}) {
     useEffect(() => {
         window.addEventListener('scroll', handleScroll);
         return () => window.removeEventListener('scroll', handleScroll);
-    }, [])
+    },[])
 
     const contextData = {
         data,

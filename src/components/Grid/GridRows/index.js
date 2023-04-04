@@ -1,4 +1,3 @@
-/* eslint-disable no-unused-vars */
 import React, { useEffect, useContext } from 'react';
 import './GridRows.css';
 import Cells from './Cells';
@@ -30,8 +29,8 @@ function GridRows() {
         try {
             event.preventDefault();
             const row = document.querySelector('.selected')
-            if (row === null && event.keyCode === 40) {
-                document.getElementById("0").classList.add('selected');
+            if (row === null) {
+                return;
             } else {
                 let i = Number(row.id);
                 if (event.keyCode === 40) {
@@ -52,13 +51,13 @@ function GridRows() {
         return () => {
             document.body.removeEventListener("keydown", keyBoard)
         };
-    })
+    },[])
     useEffect(() => {
         document.body.addEventListener("click", selectedFunc);
         return () => {
             document.body.removeEventListener("click", selectedFunc)
         };
-    })
+    },[])
     return (
         <>
             {users.data && users.data.length > 0 && users.data.map((user, index) => {

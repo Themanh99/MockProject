@@ -1,8 +1,8 @@
-/* eslint-disable no-unused-vars */
 import React from 'react';
 import './GridColumns.css';
 
 function GridColumn() {
+
     const ArrTitle = [
         "firstName",
         "lastName",
