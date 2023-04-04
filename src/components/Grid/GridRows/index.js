@@ -1,9 +1,11 @@
 /* eslint-disable no-unused-vars */
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useContext } from 'react';
 import './GridRows.css';
 import Cells from './Cells';
+import {UserContext} from '../../../context/UserContext'
 
-function GridRows({ users }) {
+function GridRows() {
+    const users = useContext(UserContext);
 
     const selectedFunc = (event) => {
         const tg = event.target.parentElement.parentElement;
@@ -59,7 +61,7 @@ function GridRows({ users }) {
     })
     return (
         <>
-            {users && users.length > 0 && users.map((user, index) => {
+            {users.data && users.data.length > 0 && users.data.map((user, index) => {
                 return (
                     <div
                         key={index}
