@@ -33,14 +33,13 @@ function GridComponent(props) {
     }, [page]);
 
     useEffect(() => {
-        // su dung useMemo tranh re render lai theo page
         window.addEventListener('scroll', handleScroll);
         return () => window.removeEventListener('scroll', handleScroll);
     }, [])
 
     return (
         // lăn chuột kéo thêm api là lazy - loading , pagination 
-        <div>
+        <div style={{width:'fit-content'}}>
             <h1>Grid virtual</h1>
             <GridColumn />
             <div className="grid-rows">

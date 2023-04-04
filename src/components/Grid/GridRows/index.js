@@ -2,7 +2,6 @@
 import React, { useEffect, useState } from 'react';
 import './GridRows.css';
 import Cells from './Cells';
-import { type } from '@testing-library/user-event/dist/type';
 
 function GridRows({ users }) {
 
@@ -29,7 +28,7 @@ function GridRows({ users }) {
         try {
             event.preventDefault();
             const row = document.querySelector('.selected')
-            if (row === null) {
+            if (row === null && event.keyCode === 40) {
                 document.getElementById("0").classList.add('selected');
             } else {
                 let i = Number(row.id);
