@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { memo } from 'react';
 import './GridColumns.css';
 
 function GridColumn() {
@@ -49,4 +49,4 @@ function GridColumn() {
     );
 }
 
-export default GridColumn;
+export default memo(GridColumn);

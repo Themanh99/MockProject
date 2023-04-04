@@ -51,6 +51,7 @@ function GridRows() {
         return () => {
             document.body.removeEventListener("keydown", keyBoard)
         };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     },[])
     useEffect(() => {
         document.body.addEventListener("click", selectedFunc);
